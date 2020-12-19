@@ -84,7 +84,7 @@ public class Calc {
             case '%':
                 return 2;
         }
-        return 1; // Тут остается + и -
+        return 1; 
     }
     
     private static double calculate(String sIn) throws Exception {
