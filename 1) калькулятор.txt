@@ -86,7 +86,6 @@ public class Calc {
         }
         return 1; // Тут остается + и -
     }
-
     
     private static double calculate(String sIn) throws Exception {
         double dA = 0, dB = 0;
