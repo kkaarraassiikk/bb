@@ -12,13 +12,27 @@ public class Calc {
             System.out.println("Введте выражение для расчета. Поддерживаются цифры, операции +,-,*,/,^,% и приоритеты в виде скобок ( и ):");
             sIn = d.readLine();
             sIn = opn(sIn);
+
+//            String [] strings = sIn.split(" ");
+//            for (String element: strings){
+//                System.out.print(element);
+//            }
+
+            String[] arrSplit_3 = sIn.split("s");
+            for (int i=0; i < arrSplit_3.length; i++){
+                System.out.print(arrSplit_3[i]);
+            }
+            String[] splited = sIn.split(" ");
+
+            System.out.println(" ");
+
             System.out.println(calculate(sIn));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    
+
     private static String opn(String sIn) throws Exception {
         StringBuilder sbStack = new StringBuilder(), sbOut = new StringBuilder();
         char cIn, cTmp;
@@ -66,7 +80,7 @@ public class Calc {
         return  sbOut.toString();
     }
 
-    
+
     private static boolean isOp(char c) {
         return switch (c) {
             case '-', '+', '*', '/', '^' -> true;
@@ -74,7 +88,7 @@ public class Calc {
         };
     }
 
-    
+
     private static byte opPrior(char op) {
         switch (op) {
             case '^':
@@ -84,8 +98,9 @@ public class Calc {
             case '%':
                 return 2;
         }
-        return 1; 
+        return 1; // Тут остается + и -
     }
+
     
     private static double calculate(String sIn) throws Exception {
         double dA = 0, dB = 0;
